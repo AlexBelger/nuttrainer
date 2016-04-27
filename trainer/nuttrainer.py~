@@ -1,0 +1,37 @@
+
+import sys, getopt
+from collection import Collection
+
+class Trainer(object):
+    def __init__(self):
+        self.collection = Collection()
+
+    def start(self, argv):
+        try:
+            opts, args = getopt.getopt(argv,"mt:",["topic="])
+        except getopt.GetoptError as err:
+            print(err)
+            self.usage()
+            sys.exit(2)
+        for opt, arg in opts:
+            if opt == "-m":
+                self.modify = True;
+            elif opt in ("-t", "--topic"):
+                if hasattr(self, 'modify'):
+                    self.collection = Collection()
+                    self.collection.modifyCollection(arg)
+                else:
+                    self.collection.topics[arg]
+            elif o in ("-h", "--help"):
+                self.usage()
+                sys.exit()
+            else:
+                assert False, "unhandled option"
+        if len(args) == 1 and hasattr(self,'topic'):
+            print(args)
+
+    def usage():
+        print('remtrainer.py -t <topic>')
+        
+if __name__ == '__main__':
+    Trainer().start(sys.argv[1:])

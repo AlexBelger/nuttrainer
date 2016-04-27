@@ -1,0 +1,40 @@
+
+// [START declaration]
+syntax = "proto2";
+package tutorial;
+// [END declaration]
+
+// [START messages]
+enum Quality {
+  EXCELLENT = 1;
+  GOOD = 2;
+  FAIR = 3;
+  FAILED = 4;
+  NO_CLUE = 5;
+}
+
+enum Answer {
+     WRITE = 1;
+     IN_HEAD = 2;
+}
+
+enum Type {
+     NONE = 1;
+     CLOZE = 2;
+     TWO_SIDED = 3;
+     MULTI_SIDED = 4;
+}
+
+message Card {
+  repeated string side = 1;
+  repeated int64 trainingDate = 2;
+  repeated Quality trainingResult = 3;
+  optional Answer answer = 4 [default = WRITE];
+  optional Type type = 5 [default = NONE];
+}
+
+message Book {
+  required string name = 1;
+  repeated Card card = 2;
+}
+// [END messages]

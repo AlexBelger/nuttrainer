@@ -1,0 +1,5 @@
+from importTopics import ImportTopics
+
+class ImportGProtoBufTopics(ImportTopics):
+    def getBooks(self,callbackfunction):              
+        raise NotImplementedError("Subclass must implement abstract method")

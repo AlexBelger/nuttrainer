@@ -1,0 +1,15 @@
+import {Component} from 'angular2/core'
+import {CardService} from './card.service'
+import {CardsComponent} from './cards.component'
+
+@Component({
+    selector: 'app',
+    template: `
+	<h1>{{title}}<h1>
+	<cards></cards>
+	`,
+    directives: [CardsComponent],
+    providers: [
+	CardService
+    ]
+})

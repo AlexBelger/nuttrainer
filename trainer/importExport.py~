@@ -1,0 +1,14 @@
+
+
+class ImportExport(object):
+    
+    def __init__(self, root = "./data/"):
+        self.root = root 
+        self.gProtoBuf = None
+
+    def importFromGProtocolBuffer(self, dir = "gProtoBuf"):
+        self.gProtoBuf = ImportGProtoBufTopics( self.root + dir)
+        self.gProtoBuf.getBooks(self.importTopic)
+
+    def importTopic(self, book):
+        """Copy the book content"""

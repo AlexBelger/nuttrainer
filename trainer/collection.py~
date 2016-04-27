@@ -1,0 +1,27 @@
+
+import sys
+from topic import Topic
+
+class Collection:
+    def __init__(self):
+        self.topics = dict() #['German'] = Topic()
+
+    def modifyCollection(self, topic):
+        while topic in self.topics:
+            print("The topic already exists. r for rename, d for delete, q for quit") 
+            self.selection = input()
+            if self.selection == 'r' :
+                topic = input()
+                if len(topic) == 0:
+                    print("An empty topic is invalid!")
+                    return
+            elif self.selection == 'd' :
+                self.topics.pop(topic,None)
+                return
+            else:
+                return
+
+        self.topics[topic] = Topics()
+        for key in self.topics:
+            print(key)
+        

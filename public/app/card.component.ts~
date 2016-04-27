@@ -1,0 +1,10 @@
+import {Component} from 'angular2/core'
+
+@Component ({
+    selector: 'card',
+    template: `
+	<div>Q:</div>
+	<hr/>
+	<div>A:</div>
+	`
+})

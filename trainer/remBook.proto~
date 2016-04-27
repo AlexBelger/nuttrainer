@@ -1,0 +1,16 @@
+
+// [START declaration]
+syntax = "proto3";
+package tutorial;
+// [END declaration]
+
+// [START messages]
+message Card {
+  string first = 1;
+  string second = 2;  
+}
+
+message remBook {
+  repeated Card card = 1;
+}
+// [END messages]

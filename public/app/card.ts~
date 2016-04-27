@@ -1,0 +1,15 @@
+
+export class Category {
+    id: number
+    name: string
+}
+export class Card {
+    id: number
+    category: Category
+    first: string
+    second: string
+}
+var CATEGORIES: Category[] = [
+    {"id": 1, "name": "Stamps"},
+    {"id": 2, "name": "MTG"}
+]
