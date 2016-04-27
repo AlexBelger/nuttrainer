@@ -3,4 +3,10 @@
   <hr/>
   <div>A: {{card.second}}</div>
 </div>
-<div>Test</div>
+<div *ngIf="!card">
+  <label for="first">Question</label>
+  <textarea id="first"></textarea>
+  <br/>
+  <label for="second">Answer</label>
+  <textarea id="second"></textarea>
+</div>
